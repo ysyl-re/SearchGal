@@ -13,8 +13,6 @@ async function searchXxacg(game: string): Promise<PlatformSearchResult> {
     items: [],
   };
   
-  let html = ""; // 将 html 变量提升到 try 块外部
-
   try {
     const url = new URL("https://xxacg.net/");
     url.searchParams.set("s", game);
@@ -24,7 +22,7 @@ async function searchXxacg(game: string): Promise<PlatformSearchResult> {
       throw new Error(`Search 资源平台 SearchAPI 响应异常状态码 ${response.status}`);
     }
 
-    html = await response.text();
+    const html = await response.text();
     const matches = html.matchAll(REGEX);
 
     const items: SearchResultItem[] = [];

@@ -15,12 +15,14 @@ async function searchZiYuanShe(game: string): Promise<PlatformSearchResult> {
       throw new Error(`资源平台 SearchAPI 响应异常状态码 ${response.status}`);
     }
     
-    const resJson: any = await response.json();
-    
+    const resJson = (await response.json()) as {
+      hits?: { id: string; titles: { title: string; lang: string }[] }[];
+    };
+
     const gameListData = resJson.hits;
 
     if (gameListData) {
-      const items: SearchResultItem[] = gameListData.map((item: any) => {
+      const items: SearchResultItem[] = gameListData.map((item) => {
         let name: string = "未知";
         let firstTitle: string | undefined;
 

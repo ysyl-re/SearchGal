@@ -1,4 +1,4 @@
-import type { Platform, PlatformSearchResult, StreamProgress, StreamResult } from "./types";
+import type { Platform, StreamProgress, StreamResult } from "./types";
 import platformsGal from "./platforms/gal";
 import platformsPatch from "./platforms/patch";
 

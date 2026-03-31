@@ -21,3 +21,5 @@ node_modules/
 # IDE settings
 .vscode
 .claude
+
+.history

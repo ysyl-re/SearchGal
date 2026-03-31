@@ -2,7 +2,7 @@ import { fetchClient } from "../../utils/httpClient";
 import type { Platform, PlatformSearchResult, SearchResultItem } from "../../types";
 
 const API_URL = "https://seve.yugal.cc";
-const REGEX = /<div class="post-info">\s*?<h2><a  href="(?<URL>.*?)">(?<NAME>.*?)<\/a><\/h2>/gs;
+const REGEX = /<div class="post-info">\s*?<h2><a {2}href="(?<URL>.*?)">(?<NAME>.*?)<\/a><\/h2>/gs;
 
 async function searchBiAnXingLu(game: string): Promise<PlatformSearchResult> {
   const searchResult: PlatformSearchResult = {

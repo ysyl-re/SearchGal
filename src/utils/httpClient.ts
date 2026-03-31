@@ -32,7 +32,7 @@ export async function fetchClient(
     return response;
   } catch (error) {
     if (error instanceof Error && error.name === 'AbortError') {
-      throw new Error(`资源平台 SearchAPI 请求超时`);
+      throw new Error(`资源平台 SearchAPI 请求超时`, { cause: error });
     }
     throw error;
   } finally {

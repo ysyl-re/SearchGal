@@ -2,7 +2,7 @@ import { fetchClient } from "../../utils/httpClient";
 import type { Platform, PlatformSearchResult, SearchResultItem } from "../../types";
 
 const API_URL = "https://acgyyg.ru/";
-const REGEX = /<a  target="_blank" href="(?<URL>.*?)" title="(?<NAME>.*?)"  class="post-overlay">/gs;
+const REGEX = /<a {2}target="_blank" href="(?<URL>.*?)" title="(?<NAME>.*?)" {2}class="post-overlay">/gs;
 
 async function searchACGYingYingGuai(game: string): Promise<PlatformSearchResult> {
   const searchResult: PlatformSearchResult = {

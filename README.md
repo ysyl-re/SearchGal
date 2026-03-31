@@ -38,7 +38,7 @@
 
 ### 🟢 免登录直链下载
 
-[![GGS](https://img.shields.io/badge/GGS-00C853)](https://gal.saop.cc/)
+[![VNS](https://img.shields.io/badge/VNS-00C853)](https://gal.saop.cc/)
 [![真红小站](https://img.shields.io/badge/真红小站-00C853)](https://shinnku.com)
 [![TouchGal](https://img.shields.io/badge/TouchGal-00C853)](https://www.touchgal.us/)
 [![Galgamex](https://img.shields.io/badge/Galgamex-00C853)](https://www.galgamex.net/)

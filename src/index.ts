@@ -1,6 +1,6 @@
 import { handleSearchRequestStream, PLATFORMS_GAL, PLATFORMS_PATCH } from "./core";
-export interface Env {
-}
+import type { Platform } from "./types";
+export type Env = Record<string, unknown>;
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -8,7 +8,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-async function handleSearch(request: Request, env: Env, ctx: ExecutionContext, platforms: any[]) {
+async function handleSearch(request: Request, _env: Env, ctx: ExecutionContext, platforms: Platform[]) {
   try {
     const formData = await request.formData();
     const game = formData.get("game") as string;

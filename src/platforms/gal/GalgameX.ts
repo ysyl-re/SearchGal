@@ -22,20 +22,21 @@ async function searchGalgameX(game: string): Promise<PlatformSearchResult> {
   try {
     const payload = {
       queryString: JSON.stringify([{ type: "keyword", name: game }]),
-      limit: 24, // Hardcoded as per original script
-      searchOption: {
-        searchInIntroduction: false,
-        searchInAlias: true,
-        searchInTag: false,
-      },
+      limit: 24,
       page: 1,
-      selectedType: "all",
+      searchOption: {
+        searchInIntroduction: true,
+        searchInAlias: true,
+        searchInTag: true,
+      },
       selectedLanguage: "all",
+      selectedMonths: ["all"],
       selectedPlatform: "all",
+      selectedType: "all",
+      selectedYears: ["all"],
       sortField: "resource_update_time",
       sortOrder: "desc",
-      selectedYears: ["all"],
-      selectedMonths: ["all"],
+      tagIds: "",
     };
 
     const response = await fetchClient(API_URL, {

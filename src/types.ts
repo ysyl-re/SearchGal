@@ -18,7 +18,7 @@ export interface Platform {
   color: string;
   tags: string[];
   magic: boolean;
-  search: (game: string, ...args: any[]) => Promise<PlatformSearchResult>;
+  search: (game: string) => Promise<PlatformSearchResult>;
 }
 
 // SSE 事件流中的数据结构
