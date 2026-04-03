@@ -1,11 +1,13 @@
 import { Handler } from '@netlify/functions';
+import { buildRedirectResponse } from '../../src/redirect';
 
 export const handler: Handler = async (event) => {
     const origin = `https://${event.headers.host}`;
+    const response = buildRedirectResponse(origin);
     return {
-        statusCode: 302,
+        statusCode: response.status,
         headers: {
-            'Location': `https://searchgal.top?api=${encodeURIComponent(origin)}`
+            'Location': response.headers.get('Location') || 'https://www.searchgal.top'
         }
     };
 };

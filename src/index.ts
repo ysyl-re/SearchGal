@@ -1,4 +1,5 @@
 import { handleSearchRequestStream, PLATFORMS_GAL, PLATFORMS_PATCH } from "./core";
+import { buildRedirectResponse } from "./redirect";
 import type { Platform } from "./types";
 export type Env = Record<string, unknown>;
 
@@ -54,8 +55,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/') {
-      const origin = url.origin;
-      return Response.redirect(`https://searchgal.top?api=${encodeURIComponent(origin)}`, 302);
+      return buildRedirectResponse(url.origin);
     }
 
     if (request.method === "OPTIONS") {
